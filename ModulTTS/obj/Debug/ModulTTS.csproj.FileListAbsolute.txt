@@ -1,0 +1,5 @@
+C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\bin\Debug\ModulTTS.dll
+C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\bin\Debug\ModulTTS.pdb
+C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\obj\Debug\ModulTTS.csproj.CoreCompileInputs.cache
+C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\obj\Debug\ModulTTS.dll
+C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\obj\Debug\ModulTTS.pdb
