@@ -1,0 +1,6 @@
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\DBConnector\bin\Debug\DBConnector.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\DBConnector\bin\Debug\DBConnector.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\DBConnector\obj\Debug\DBConnector.csprojAssemblyReference.cache
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\DBConnector\obj\Debug\DBConnector.csproj.CoreCompileInputs.cache
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\DBConnector\obj\Debug\DBConnector.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\DBConnector\obj\Debug\DBConnector.pdb

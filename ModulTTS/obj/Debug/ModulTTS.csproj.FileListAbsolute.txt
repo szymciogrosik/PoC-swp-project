@@ -3,3 +3,11 @@ C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\bin\Debug\ModulTTS.pdb
 C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\obj\Debug\ModulTTS.csproj.CoreCompileInputs.cache
 C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\obj\Debug\ModulTTS.dll
 C:\Users\thody\IdeaProjects\SWP_Project\ModulTTS\obj\Debug\ModulTTS.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\bin\Debug\ModulTTS.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\bin\Debug\ModulTTS.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\bin\Debug\Microsoft.Speech.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\obj\Debug\ModulTTS.csprojAssemblyReference.cache
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\obj\Debug\ModulTTS.csproj.CoreCompileInputs.cache
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\obj\Debug\ModulTTS.csproj.CopyComplete
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\obj\Debug\ModulTTS.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\obj\Debug\ModulTTS.pdb

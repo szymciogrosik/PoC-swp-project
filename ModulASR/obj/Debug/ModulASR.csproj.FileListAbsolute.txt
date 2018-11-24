@@ -1,0 +1,8 @@
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\ModulASR.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\ModulASR.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\Microsoft.Speech.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.csprojAssemblyReference.cache
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.csproj.CoreCompileInputs.cache
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.csproj.CopyComplete
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.pdb
