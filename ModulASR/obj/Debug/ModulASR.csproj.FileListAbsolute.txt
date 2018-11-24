@@ -6,3 +6,5 @@ C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.csproj.CoreCom
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.csproj.CopyComplete
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.dll
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\DBConnector.dll
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\DBConnector.pdb

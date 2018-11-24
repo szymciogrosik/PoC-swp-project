@@ -32,3 +32,4 @@ C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\SterownikDialogu\obj\Debug\SterownikDialog
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\SterownikDialogu\obj\Debug\SterownikDialogu.csproj.CopyComplete
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\SterownikDialogu\obj\Debug\SterownikDialogu.exe
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\SterownikDialogu\obj\Debug\SterownikDialogu.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\SterownikDialogu\bin\Debug\Microsoft.Speech.dll

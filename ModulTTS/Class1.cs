@@ -5,6 +5,8 @@ using System.Text;
 
 namespace ModulTTS
 {
+    // Test comment
+
     public class Class1
     {
     }
