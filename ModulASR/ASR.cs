@@ -75,7 +75,6 @@ namespace ModulASR
             GrammarBuilder builder = new GrammarBuilder();
             string fileName = @"c:\Users\thody\IdeaProjects\swp_projekt\ModulASR\grammar.xml";
             Grammar citiesGrammar = new Grammar(new FileStream(fileName, FileMode.Open));
-            //citiesGrammar.Name = "Stream Cities Grammar";
             return citiesGrammar;
         }
     }
