@@ -13,7 +13,6 @@ namespace ModulASR
         public System.Globalization.CultureInfo pRecognitionLanguage = new System.Globalization.CultureInfo("pl-PL");
         private OrderService orderService;
         private Order order;
-        private UberGrammar.UberGrammar uberGrammar;
 
         public ASR(Order order)
         {
@@ -27,7 +26,6 @@ namespace ModulASR
             SRE.SpeechRecognized += SRE_SpeechRecognized; ;
             SRE.SetInputToDefaultAudioDevice();
 
-            uberGrammar = new UberGrammar.UberGrammar();
             Grammar grammar = CreateGrammar();
             SRE.LoadGrammar(grammar);
         }
@@ -68,7 +66,6 @@ namespace ModulASR
                 }
             }
         }
-
 
         private Grammar CreateGrammar()
         {

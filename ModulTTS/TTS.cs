@@ -7,7 +7,7 @@ namespace ModulTTS
 {
     // Test comment
 
-    public class Class1
+    public class TTS
     {
     }
 }
