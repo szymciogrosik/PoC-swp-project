@@ -1,0 +1,58 @@
+<grammar version="1.0" xml:lang="pl-PL" mode="voice" root="Subj_Verb_Obj"
+ xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics-ms/1.0"
+ xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+
+
+  <rule id="Subj_Verb_Obj" scope="public">
+
+    <ruleref uri="#id_Subject" />
+    <tag> $.Subject = $$; </tag>
+
+    <ruleref uri="#id_Verb" />
+    <tag> $.Verb = $$; </tag>
+
+    <one-of>
+      <item repeat="0-1">the</item>
+      <item repeat="0-1">a</item>
+      <item repeat="0-1">an</item>
+    </one-of>
+
+    <ruleref uri="#id_Object" />
+    <tag> $.Object = $$; </tag>
+
+  </rule>
+
+  <rule id="id_Subject" scope="private">
+    <one-of>
+      <item> I </item>
+      <item> you </item>
+      <item> he </item>
+      <item> she </item>
+      <item> Tom </item>
+      <item> Mary </item>
+    </one-of>
+  </rule>
+
+  <rule id="id_Verb" scope="private">
+    <one-of>
+      <item> ate </item>
+      <item> bought </item>
+      <item> saw </item>
+      <item> sold </item>
+      <item> wanted </item>
+    </one-of>
+  </rule>
+
+  <rule id="id_Object" scope="private">
+    <one-of>
+      <item> apple </item>
+      <item> banana </item>
+      <item> pear </item>
+      <item> peach </item>
+      <item> melon </item>
+    </one-of>
+  </rule>
+
+
+</grammar>

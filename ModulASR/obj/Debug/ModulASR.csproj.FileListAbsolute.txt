@@ -8,3 +8,13 @@ C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.dll
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.pdb
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\DBConnector.dll
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\bin\Debug\DBConnector.pdb
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\bin\Debug\ModulASR.dll
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\bin\Debug\ModulASR.pdb
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\bin\Debug\DBConnector.dll
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\bin\Debug\Microsoft.Speech.dll
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\bin\Debug\DBConnector.pdb
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.csprojAssemblyReference.cache
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.csproj.CoreCompileInputs.cache
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.csproj.CopyComplete
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.dll
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.pdb

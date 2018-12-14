@@ -56,5 +56,8 @@
       <Name>DBConnector</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="grammar.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
