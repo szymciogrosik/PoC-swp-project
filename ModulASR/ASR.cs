@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using DBConnector.Model;
 using DBConnector.Service;
 using Microsoft.Speech.Recognition;
-using Microsoft.Speech.Recognition.SrgsGrammar;
 
 
 namespace ModulASR
@@ -66,7 +62,7 @@ namespace ModulASR
         {
             if (e.Result != null)
             {
-                if (e.Result.Semantics != null)
+                if (e.Result.Semantics != null && e.Result.Semantics.Count != 0)
                 {
                     Console.WriteLine(e.Result.Text);
                 }
