@@ -52,7 +52,7 @@ namespace SterownikDialogu
         private void UpdateTestLabel(Object i)
         {
             int val = Convert.ToInt32(i);
-            labelExample.Content = i + "";
+            //labelExample.Content = i + "";
         }
 
     }

@@ -30,11 +30,18 @@ namespace ModulTTS
 
         public void setupPropmptToWelcome()
         {
-            string text = "Witamy w głosowym zamawianiu UBERA pod dom! Proszę rozpocząć po sygnale.";
-            // TODO jakiś sygnał :D
+            string text = "Witamy w głosowym zamawianiu UBERA. Proszę rozpocząć po sygnale.";
             this.ClearPropmpt();
             this.Prompt.AppendText(text);
             this.StartSpeech();
+            this.AttentionSound();
+        }
+
+        private void AttentionSound()
+        {
+            System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer();
+            soundPlayer.SoundLocation = @"C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\sounds\AttentionSound.wav";
+            soundPlayer.PlaySync();
         }
     }
 }
