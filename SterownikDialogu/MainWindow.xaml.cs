@@ -22,7 +22,7 @@ namespace SterownikDialogu
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BackgroundThred backgroundThread;
+        private BackgroundThread backgroundThread;
         private delegate void DelegateParams(Object param);
 
         public MainWindow()
@@ -32,8 +32,8 @@ namespace SterownikDialogu
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            backgroundThread = new BackgroundThred(this);
-            new Thread(backgroundThread.test).Start();
+            backgroundThread = new BackgroundThread(this);
+            new Thread(backgroundThread.Core).Start();
         }
 
         private void Window_Closed(object sender, EventArgs e)

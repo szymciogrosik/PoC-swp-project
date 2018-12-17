@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DBConnector.Model
 {
-    class Wrapper<T>
+    public class Wrapper<T>
     {
         public WrapperType Type { get; }
         public T Value { get; set; }
@@ -21,6 +21,9 @@ namespace DBConnector.Model
     {
         // TODO uzupełnić o pozostałe typy
         CAR_TYPE = 1,
-        ADDERSS = 2
+        ADDERSS = 2,
+        ADDERSS_NUMBER = 3,
+        HOUR = 4,
+        MINUTES = 5
     }
 }

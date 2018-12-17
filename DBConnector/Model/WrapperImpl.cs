@@ -6,17 +6,41 @@ using System.Text;
 
 namespace DBConnector.Model
 {
-    class CarType : Wrapper<String>
+    public class CarType : Wrapper<String>
     {
         public CarType() : base(WrapperType.CAR_TYPE, "")
         {
         }
     }
 
-    class Address : Wrapper<String>
+    public class Address : Wrapper<String>
     {
         public Address() : base(WrapperType.ADDERSS, "")
         {
+        }
+    }
+
+    public class AddressNumber : Wrapper<int>
+    {
+        public AddressNumber() : base(WrapperType.ADDERSS_NUMBER, -1)
+        {
+
+        }
+    }
+
+    public class Hour : Wrapper<int>
+    {
+        public Hour() : base(WrapperType.HOUR, -1)
+        {
+
+        }
+    }
+
+    public class MINUTES : Wrapper<int>
+    {
+        public MINUTES() : base(WrapperType.MINUTES, -1)
+        {
+
         }
     }
 }
