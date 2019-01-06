@@ -25,9 +25,17 @@ namespace ModulTTS
             this.Synthesizer.Speak(this.Prompt);
         }
 
-        public void setupPropmptToWelcome()
+        public void SetupPropmptToWelcome()
         {
-            string text = "Witamy w głosowym zamawianiu UBERA.";
+            string text = "Witamy w głosowym zamawianiu UBERA. Proszę rozpocząć po pojawieniu się ikony na dole ekranu!";
+            this.ClearPropmpt();
+            this.Prompt.AppendText(text);
+            this.StartSpeech();
+        }
+
+        public void SetupPropmptToGoodbye()
+        {
+            string text = "Zamówienie zostało przyjęte, dziękujemy za skorzystanie z naszych usług! Do usłyszenia!";
             this.ClearPropmpt();
             this.Prompt.AppendText(text);
             this.StartSpeech();

@@ -12,6 +12,7 @@
       <ruleref uri="#id_addressStreet" />
       <tag> $.ADDRESS = $$; </tag>
 
+      <ruleref uri="#id_address_numberPrefix" />
       <ruleref uri="#id_address_number" />
       <tag> $.ADDERSS_NUMBER = $$; </tag>
 
@@ -172,6 +173,13 @@
         <item repeat="0-1">Żołnierzy II Armii Wojska Polskiego</item>
         <item repeat="0-1">Żurawicka</item>
         <item repeat="0-1">Żywiecka</item>
+      </one-of>
+    </rule>
+
+    <rule id="id_address_numberPrefix" scope="private">
+      <one-of>
+        <item repeat="0-1">numer</item>
+        <item repeat="0-1">o numerze</item>
       </one-of>
     </rule>
 

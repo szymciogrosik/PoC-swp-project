@@ -60,14 +60,14 @@ namespace SterownikDialogu
                 case GuiElements.LABEL_MINUTE:
                     delegateParams = new DelegateParams(UpdateMinute);
                     break;
+                case GuiElements.LABEL_LISTENING:
+                    delegateParams = new DelegateParams(UpdateListeningIcon);
+                    break;
+                case GuiElements.LABEL_FINISH:
+                    delegateParams = new DelegateParams(UpdateFinishLabel);
+                    break;
             }
             this.Dispatcher.Invoke(delegateParams, customParams);
-        }
-
-        private void UpdateTestLabel(Object i)
-        {
-            int val = Convert.ToInt32(i);
-            //labelExample.Content = i + "";
         }
 
         private void UpdateCarType(object obj)
@@ -93,6 +93,19 @@ namespace SterownikDialogu
         private void UpdateMinute(object obj)
         {
             holder_5.Content = (string)obj;
+        }
+
+        private void UpdateListeningIcon(object obj)
+        {
+            bool value = bool.Parse((string)obj);
+            if (value) listening_icon.Visibility = Visibility.Visible;
+            else listening_icon.Visibility = Visibility.Hidden;
+        }
+        
+
+        private void UpdateFinishLabel(object obj)
+        {
+             finish.Visibility = Visibility.Visible;
         }
 
     }

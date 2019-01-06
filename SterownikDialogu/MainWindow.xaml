@@ -48,10 +48,6 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Margin" Value="20"/>
         </Style>
-        <Style x:Key="icon" TargetType="{x:Type Image}">
-            <Setter Property="Margin" Value="20"/>
-            <Setter Property="Visibility" Value="Visible"/>
-        </Style>
     </Window.Resources>
     <Grid>
         <Grid x:Name="uber">
@@ -76,6 +72,10 @@
                 Głosowe zamawianie UBERA na terenie dzielnicy Ursus!
             </Label>
 
+            <Label Name="listening_icon" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" Visibility="Hidden">
+                <Image Source="Images/listening.png" />
+            </Label>
+
 
             <Label  Grid.Column="0" Grid.Row="1" Style="{DynamicResource styleWord}">Typ samochodu:</Label>
             <Label Name="value_1" Grid.Column="1" Grid.Row="1" Style="{DynamicResource stylePlaceHolder}">(Rower/Samochód/Helikopter/Skuter/Hulajnogę)</Label>
@@ -88,7 +88,7 @@
 
 
             <Label Grid.Column="0" Grid.Row="3" Style="{DynamicResource styleWord}">Numer</Label>
-            <Label Name="value_3" Grid.Column="1" Grid.Row="3" Style="{DynamicResource stylePlaceHolder}">(0-23)</Label>
+            <Label Name="value_3" Grid.Column="1" Grid.Row="3" Style="{DynamicResource stylePlaceHolder}">(numer/o numerze 0-23)</Label>
             <Label Name="holder_3" Grid.Column="3" Grid.Row="3" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
@@ -102,7 +102,7 @@
             <Label Name="holder_5" Grid.Column="3" Grid.Row="5" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
-            <Label Name="complete" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" Style="{DynamicResource styleTitle}" Visibility="Hidden">Zamówienie złożone!</Label>
+            <Label Name="finish" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" Style="{DynamicResource styleTitle}" Visibility="Hidden">Zamówienie złożone!</Label>
 
         </Grid>
     </Grid>

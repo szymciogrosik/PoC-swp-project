@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Controls;
 
-namespace SterownikDialogu 
+namespace SterownikDialogu
 {
     class BackgroundThread : RecognizeEventObserver
     {
@@ -33,21 +33,22 @@ namespace SterownikDialogu
 
         public void Core()
         {
-            this.TTS.setupPropmptToWelcome();
-            Boolean isConfirmed = false;
+            this.TTS.SetupPropmptToWelcome();
 
-            while(!isConfirmed)
+            while (!this.Order.IsReady())
             {
                 this.WaitRecognize = true;
                 this.ASR.StartRecognize();
+                MainWindow.UpdateElement(GuiElements.LABEL_LISTENING, new string[] { "true" });
                 while (WaitRecognize)
                 {
-                    Console.WriteLine("Czekam słuchając");
                     Thread.Sleep(1000);
                 }
-                Console.WriteLine("Przerwano słuchanie");
+                MainWindow.UpdateElement(GuiElements.LABEL_LISTENING, new string[] { "false" });
                 this.MakeQuestion();
             }
+            MainWindow.UpdateElement(GuiElements.LABEL_FINISH, new string[] { "any" });
+            this.TTS.SetupPropmptToGoodbye();
             // koniec podsumowanie zapis do bazy+
         }
 
@@ -76,10 +77,10 @@ namespace SterownikDialogu
                 switch (type)
                 {
                     case WrapperType.CAR_TYPE:
-                        this.Order.CarType.Value = (string) dictionary[type];
+                        this.Order.CarType.Value = (string)dictionary[type];
                         break;
                     case WrapperType.ADDRESS:
-                        this.Order.Address.Value = (string) dictionary[type];
+                        this.Order.Address.Value = (string)dictionary[type];
                         break;
                     case WrapperType.ADDERSS_NUMBER:
                         this.Order.AddressNumber.Value = Int32.Parse(dictionary[type]);
