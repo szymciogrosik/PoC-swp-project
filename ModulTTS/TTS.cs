@@ -47,7 +47,7 @@ namespace ModulTTS
             {
                 case WrapperType.CAR_TYPE:
                     return "Podaj typ zamawianego samochodu";
-                case WrapperType.ADDERSS:
+                case WrapperType.ADDRESS:
                     return "Podaj adres na który ma przyjechać kierowca";
                 case WrapperType.ADDERSS_NUMBER:
                     return "Podaj numer wskazanego numeru";

@@ -14,13 +14,11 @@ namespace ModulASR
         private SpeechRecognitionEngine SRE;
         public System.Globalization.CultureInfo pRecognitionLanguage = new System.Globalization.CultureInfo("pl-PL");
         private OrderService orderService;
-        private Order order;
 
         private List<RecognizeEventObserver> observers;
 
-        public ASR(Order order)
+        public ASR()
         {
-            this.order = order;
             this.observers = new List<RecognizeEventObserver>();
             Init();
         }
@@ -53,22 +51,6 @@ namespace ModulASR
             SRE.LoadGrammar(CreateGrammar("OrderGrammar"));
         }
 
-        private string GetValue(SemanticValue Semantics, string keyName)
-        {
-            string result = "";
-            if (Semantics.ContainsKey(keyName))
-                result = Semantics[keyName].Value.ToString();
-            return result;
-        }
-
-        private string GetConfidence(SemanticValue Semantics, string keyName)
-        {
-            string result = "";
-            if (Semantics.ContainsKey(keyName))
-                result = Semantics[keyName].Confidence.ToString("0.0000");
-            return result;
-        }
-
         private void SRE_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             if (e.Result != null)
@@ -76,19 +58,28 @@ namespace ModulASR
                 if (e.Result.Semantics != null && e.Result.Semantics.Count != 0)
                 {
                     Console.WriteLine(e.Result.Text);
-                    Console.WriteLine("Wysyłam wiadomosć");
-                    this.NotifyObserver(e.Result.Text);
 
+                    Dictionary<WrapperType, string> recognizeMap = new Dictionary<WrapperType, string>();
+                    SemanticValue semantic = e.Result.Semantics;
+                    
+                    foreach (WrapperType type in Enum.GetValues(typeof(WrapperType)))
+                    {
+                        string s = type.ToString();
+                        SemanticValue obj = semantic[type.ToString()];
+                        if (obj.Value.Equals("")) continue;
+                        recognizeMap.Add(type, (string) obj.Value);
+                    }
+                    Console.WriteLine("Wysyłam wiadomosć");
+                    this.NotifyObserver(recognizeMap);
                 }
             }
         }
 
         private Grammar CreateGrammar(string grammarName)
         {
-//            GrammarBuilder builder = new GrammarBuilder();
             string localPath = Path.Combine(Environment.CurrentDirectory, @"..\..\..\ModulASR\Grammar\", grammarName + ".xml");
-            Grammar citiesGrammar = new Grammar(new FileStream(localPath, FileMode.Open));
-            return citiesGrammar;
+            Grammar grammar = new Grammar(new FileStream(localPath, FileMode.Open));
+            return grammar;
         }
 
         public void AddObserver(RecognizeEventObserver observer)
@@ -101,11 +92,11 @@ namespace ModulASR
             this.observers.Remove(observer);
         }
 
-        public void NotifyObserver(String message)
+        public void NotifyObserver(Dictionary<WrapperType, string> dictionary)
         {
             foreach(RecognizeEventObserver observer in this.observers)
             {
-                observer.Notify(message);
+                observer.Notify(dictionary);
             }
         }
     }

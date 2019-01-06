@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBConnector.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,6 @@ namespace SterownikDialogu.Background.Listener
     {
         void AddObserver(RecognizeEventObserver observer);
         void RemoveObserver(RecognizeEventObserver observer);
-        void NotifyObserver(String message);
+        void NotifyObserver(Dictionary<WrapperType, string> dictionary);
     }
 }

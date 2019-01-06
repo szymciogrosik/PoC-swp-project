@@ -15,7 +15,7 @@ namespace DBConnector.Model
 
     public class Address : Wrapper<String>
     {
-        public Address() : base(WrapperType.ADDERSS, "")
+        public Address() : base(WrapperType.ADDRESS, "")
         {
         }
     }
@@ -36,9 +36,9 @@ namespace DBConnector.Model
         }
     }
 
-    public class MINUTES : Wrapper<int>
+    public class Minute : Wrapper<int>
     {
-        public MINUTES() : base(WrapperType.MINUTES, -1)
+        public Minute() : base(WrapperType.MINUTES, -1)
         {
 
         }

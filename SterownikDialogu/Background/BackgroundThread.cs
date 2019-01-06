@@ -23,7 +23,7 @@ namespace SterownikDialogu
         {
             this.MainWindow = mainWindow;
             this.Order = new Order();
-            this.ASR = new ASR(this.Order);
+            this.ASR = new ASR();
             this.ASR.LoadGrammar();
             this.TTS = new TTS();
             this.ASR.AddObserver(this);
@@ -42,6 +42,10 @@ namespace SterownikDialogu
             //      obiektcie 
             // }
             // koniec podsumowanie zapis do bazy+
+            while(true)
+            {
+
+            }
         }
 
         public void test()
@@ -53,9 +57,36 @@ namespace SterownikDialogu
             }
         }
 
-        public void Notify(String message)
+        public void Notify(Dictionary<WrapperType, string> dictionary)
         {
-            Console.WriteLine("dostałem powiadomienie:   " + message);
+            this.MakeUpOrder(dictionary);
+            Console.WriteLine("asdasdas");
+        }
+
+        private void MakeUpOrder(Dictionary<WrapperType, string> dictionary)
+        {
+            foreach (WrapperType type in Enum.GetValues(typeof(WrapperType)))
+            {
+                if (!dictionary.ContainsKey(type)) continue;
+                switch (type)
+                {
+                    case WrapperType.CAR_TYPE:
+                        this.Order.CarType.Value = (string) dictionary[type];
+                        break;
+                    case WrapperType.ADDRESS:
+                        this.Order.Address.Value = (string) dictionary[type];
+                        break;
+                    case WrapperType.ADDERSS_NUMBER:
+                        this.Order.AddressNumber.Value = Int32.Parse(dictionary[type]);
+                        break;
+                    case WrapperType.HOUR:
+                        this.Order.Hour.Value = Int32.Parse(dictionary[type]);
+                        break;
+                    case WrapperType.MINUTES:
+                        this.Order.Minute.Value = Int32.Parse(dictionary[type]);
+                        break;
+                }
+            }
         }
     }
 }

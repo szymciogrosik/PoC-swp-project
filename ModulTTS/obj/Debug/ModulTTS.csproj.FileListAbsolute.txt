@@ -19,7 +19,6 @@ C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\obj\Debug\ModulTTS.csproj.CoreC
 C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\obj\Debug\ModulTTS.csproj.CopyComplete
 C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\obj\Debug\ModulTTS.dll
 C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\obj\Debug\ModulTTS.pdb
-C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\obj\Debug\ModulTTS.g.resources
 C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\bin\Debug\DBConnector.dll
 C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\bin\Debug\DBConnector.pdb
 C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulTTS\bin\Debug\DBConnector.dll

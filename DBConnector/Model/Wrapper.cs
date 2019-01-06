@@ -20,9 +20,8 @@ namespace DBConnector.Model
     public enum WrapperType : int
     {
         // TODO uzupełnić o pozostałe typy
-        UNKNOWN = -1,
         CAR_TYPE = 1,
-        ADDERSS = 2,
+        ADDRESS = 2,
         ADDERSS_NUMBER = 3,
         HOUR = 4,
         MINUTES = 5
