@@ -12,7 +12,7 @@
       <ruleref uri="#id_addressStreet" />
       <tag> $.ADDRESS = $$; </tag>
 
-      <ruleref uri="#id_minute" />
+      <ruleref uri="#id_address_number" />
       <tag> $.ADDERSS_NUMBER = $$; </tag>
 
       <ruleref uri="#id_hourPrefix" />
@@ -172,6 +172,35 @@
         <item repeat="0-1">Żołnierzy II Armii Wojska Polskiego</item>
         <item repeat="0-1">Żurawicka</item>
         <item repeat="0-1">Żywiecka</item>
+      </one-of>
+    </rule>
+
+    <rule id="id_address_number" scope="private">
+      <one-of>
+        <item repeat="0-1">0</item>
+        <item repeat="0-1">1</item>
+        <item repeat="0-1">2</item>
+        <item repeat="0-1">3</item>
+        <item repeat="0-1">4</item>
+        <item repeat="0-1">5</item>
+        <item repeat="0-1">6</item>
+        <item repeat="0-1">7</item>
+        <item repeat="0-1">8</item>
+        <item repeat="0-1">9</item>
+        <item repeat="0-1">10</item>
+        <item repeat="0-1">11</item>
+        <item repeat="0-1">12</item>
+        <item repeat="0-1">13</item>
+        <item repeat="0-1">14</item>
+        <item repeat="0-1">15</item>
+        <item repeat="0-1">16</item>
+        <item repeat="0-1">17</item>
+        <item repeat="0-1">18</item>
+        <item repeat="0-1">19</item>
+        <item repeat="0-1">20</item>
+        <item repeat="0-1">21</item>
+        <item repeat="0-1">22</item>
+        <item repeat="0-1">23</item>
       </one-of>
     </rule>
 

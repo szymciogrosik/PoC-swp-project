@@ -48,11 +48,11 @@ namespace ModulTTS
                 case WrapperType.CAR_TYPE:
                     return "Podaj typ zamawianego samochodu";
                 case WrapperType.ADDRESS:
-                    return "Podaj adres na który ma przyjechać kierowca";
+                    return "Podaj ulicę, na którą ma przyjechać kierowca";
                 case WrapperType.ADDERSS_NUMBER:
-                    return "Podaj numer wskazanego numeru";
+                    return "Podaj numer budynku";
                 case WrapperType.HOUR:
-                    return "Podaj godzinę o której kieroca ma przyjechać";
+                    return "Podaj godzinę o której kierowca ma przyjechać";
                 case WrapperType.MINUTES:
                     return "Podaj minute na którą kierowca ma przyjechać";
                 default:

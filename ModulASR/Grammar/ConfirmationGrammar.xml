@@ -1,0 +1,37 @@
+<grammar version="1.0" xml:lang="pl-PL" mode="voice" root="Order_Grammar"
+         xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics-ms/1.0"
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+  <rule id="Order_Grammar" scope="public">
+
+    <ruleref uri="#id_correct" />
+    <tag> $.Correct = $$; </tag>
+    
+    <ruleref uri="#id_fail" />
+    <tag> $.Fail = $$; </tag>
+
+  </rule>
+
+  <rule id="id_correct" scope="private">
+    <one-of>
+		<item repeat="0-1">tak</item>
+		<item repeat="0-1">oczywiście</item>
+		<item repeat="0-1">zgadzam się</item>
+		<item repeat="0-1">ok</item>
+		<item repeat="0-1">może być</item>
+		<item repeat="0-1">niech będzie</item>
+		<item repeat="0-1">dobra</item>
+		<item repeat="0-1">akceptuje</item>
+    </one-of>
+  </rule>
+
+  <rule id="id_fail" scope="private">
+    <one-of>
+		<item repeat="0-1">nie</item>
+		<item repeat="0-1">w życiu</item>
+		<item repeat="0-1">anuluj</item>
+		<item repeat="0-1">rezygnuję</item>
+    </one-of>
+  </rule>
+
+</grammar>

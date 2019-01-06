@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DBConnector.Model
 {
@@ -18,6 +19,17 @@ namespace DBConnector.Model
             this.AddressNumber = new AddressNumber();
             this.Hour = new Hour();
             this.Minute = new Minute();
+        }
+
+        public Boolean IsReady()
+        {
+            if (!this.CarType.IsValueSet()) return false;
+            if (!this.Address.IsValueSet()) return false;
+            if (!this.AddressNumber.IsValueSet()) return false;
+            if (!this.Hour.IsValueSet()) return false;
+            if (!this.Minute.IsValueSet()) return false;
+
+            return true;
         }
     }
 }

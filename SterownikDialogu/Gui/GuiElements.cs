@@ -7,6 +7,10 @@ namespace SterownikDialogu
 {
     public enum GuiElements : int
     {
-        LABEL_TEXT = 1
+        LABEL_CAR_TYPE = 1,
+        LABEL_ADDRESS = 2,
+        LABEL_ADDRESS_NUMBER = 3,
+        LABEL_HOUR = 4,
+        LABEL_MINUTE = 5
     }
 }

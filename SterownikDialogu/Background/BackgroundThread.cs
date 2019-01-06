@@ -19,6 +19,8 @@ namespace SterownikDialogu
 
         private MainWindow MainWindow;
 
+        private Boolean WaitRecognize = true;
+
         public BackgroundThread(MainWindow mainWindow)
         {
             this.MainWindow = mainWindow;
@@ -32,35 +34,41 @@ namespace SterownikDialogu
         public void Core()
         {
             this.TTS.setupPropmptToWelcome();
+            Boolean isConfirmed = false;
+            Boolean first = true;
 
-            this.ASR.StartRecognize();
-            // odpalamy rozpoznawanie mowy
-            // KOLES mowi
-            // zatrzymujemy rozpoznawanie
-            // wczytujemy do obiektu co powiedziął (wszystko lub cześć)
-            // while(czy jest czesc) {
-            //      obiektcie 
-            // }
+            while(!isConfirmed)
+            {
+                if (!first) this.MakeQuestion();
+                first = false;
+                this.WaitRecognize = true;
+                this.ASR.StartRecognize();
+                while (WaitRecognize)
+                {
+                    Console.WriteLine("Czekam słuchając");
+                    Thread.Sleep(1000);
+                }
+                Console.WriteLine("Przerwano słuchanie");
+                
+            }
             // koniec podsumowanie zapis do bazy+
-            while(true)
-            {
-
-            }
-        }
-
-        public void test()
-        {
-            for (int i = 0; i < 10000; i++)
-            {
-                MainWindow.UpdateElement(GuiElements.LABEL_TEXT, new string[] { i+"" });
-                Thread.Sleep(1000);
-            }
         }
 
         public void Notify(Dictionary<WrapperType, string> dictionary)
         {
+            this.ASR.StopRecognize();
+            this.WaitRecognize = false;
             this.MakeUpOrder(dictionary);
-            Console.WriteLine("asdasdas");
+            this.UpdateGui();
+        }
+
+        private void MakeQuestion()
+        {
+            if (!this.Order.CarType.IsValueSet()) this.TTS.AdditionalQuestion(WrapperType.CAR_TYPE);
+            else if (!this.Order.Address.IsValueSet()) this.TTS.AdditionalQuestion(WrapperType.ADDRESS);
+            else if (!this.Order.AddressNumber.IsValueSet()) this.TTS.AdditionalQuestion(WrapperType.ADDERSS_NUMBER);
+            else if (!this.Order.Hour.IsValueSet()) this.TTS.AdditionalQuestion(WrapperType.HOUR);
+            else if (!this.Order.Minute.IsValueSet()) this.TTS.AdditionalQuestion(WrapperType.MINUTES);
         }
 
         private void MakeUpOrder(Dictionary<WrapperType, string> dictionary)
@@ -87,6 +95,15 @@ namespace SterownikDialogu
                         break;
                 }
             }
+        }
+
+        private void UpdateGui()
+        {
+            MainWindow.UpdateElement(GuiElements.LABEL_CAR_TYPE, new string[] { this.Order.CarType.Value + "" });
+            MainWindow.UpdateElement(GuiElements.LABEL_ADDRESS, new string[] { this.Order.Address.Value + "" });
+            MainWindow.UpdateElement(GuiElements.LABEL_ADDRESS_NUMBER, new string[] { this.Order.AddressNumber.Value + "" });
+            MainWindow.UpdateElement(GuiElements.LABEL_HOUR, new string[] { this.Order.Hour.Value + "" });
+            MainWindow.UpdateElement(GuiElements.LABEL_MINUTE, new string[] { this.Order.Minute.Value + "" });
         }
     }
 }

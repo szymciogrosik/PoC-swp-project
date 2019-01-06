@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DBConnector.Model
 {
-    public class Wrapper<T>
+    public abstract class Wrapper<T>
     {
         public WrapperType Type { get; }
         public T Value { get; set; }
@@ -15,6 +15,8 @@ namespace DBConnector.Model
             this.Type = Type;
             this.Value = Value;
         }
+
+        public abstract Boolean IsValueSet();
     }
 
     public enum WrapperType : int
