@@ -105,11 +105,5 @@
       <Name>ModulTTS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\pass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\correct.svg" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

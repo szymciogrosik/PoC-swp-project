@@ -17,27 +17,56 @@ namespace ModulASR
         public ASR(Order order)
         {
             this.order = order;
-            init();
+            Init();
         }
 
-        private void init()
+        private void Init()
         {
             SRE = new SpeechRecognitionEngine(pRecognitionLanguage);
             SRE.SpeechRecognized += SRE_SpeechRecognized; ;
             SRE.SetInputToDefaultAudioDevice();
-
-            Grammar grammar = CreateGrammar();
-            SRE.LoadGrammar(grammar);
         }
 
-        public void startRecognize()
+        public void StartRecognize()
         {
+            if (SRE.Grammars.Count == 0)
+            {
+                Console.WriteLine("ASR module doesnt load the Grammar.");
+                return;
+            }
             SRE.RecognizeAsync(RecognizeMode.Multiple);
         }
 
-        public void stopRecognize()
+        public void StopRecognize()
         {
             SRE.RecognizeAsyncStop();
+        }
+
+        public void LoadGrammar(WrapperType wrapperType = WrapperType.UNKNOWN)
+        {
+            // czy może jadnak ładować kilka a nie jedną ??
+            SRE.UnloadAllGrammars();
+            switch (wrapperType)
+            {
+                case WrapperType.CAR_TYPE:
+                    Console.WriteLine("Load grammar not omplemented");
+                    break;
+                case WrapperType.ADDERSS:
+                    Console.WriteLine("Load grammar not omplemented");
+                    break;
+                case WrapperType.ADDERSS_NUMBER:
+                    Console.WriteLine("Load grammar not omplemented");
+                    break;
+                case WrapperType.HOUR:
+                    Console.WriteLine("Load grammar not omplemented");
+                    break;
+                case WrapperType.MINUTES:
+                    Console.WriteLine("Load grammar not omplemented");
+                    break;
+                default:
+                    SRE.LoadGrammar(CreateGrammar("grammar"));
+                    break;
+            }
         }
 
         private string GetValue(SemanticValue Semantics, string keyName)
@@ -67,10 +96,10 @@ namespace ModulASR
             }
         }
 
-        private Grammar CreateGrammar()
+        private Grammar CreateGrammar(string grammarName)
         {
             GrammarBuilder builder = new GrammarBuilder();
-            string fileName = @"c:\Users\thody\IdeaProjects\swp_projekt\ModulASR\grammar.xml";
+            string fileName = @"c:\Users\thody\IdeaProjects\swp_projekt\ModulASR\" + grammarName + ".xml";
             Grammar citiesGrammar = new Grammar(new FileStream(fileName, FileMode.Open));
             return citiesGrammar;
         }

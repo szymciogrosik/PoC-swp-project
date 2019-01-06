@@ -1,8 +1,5 @@
-﻿using Microsoft.Speech.Synthesis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using DBConnector.Model;
+using Microsoft.Speech.Synthesis;
 
 namespace ModulTTS
 {
@@ -39,9 +36,35 @@ namespace ModulTTS
 
         private void AttentionSound()
         {
-            System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer();
-            soundPlayer.SoundLocation = @"C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\sounds\AttentionSound.wav";
-            soundPlayer.PlaySync();
+            System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(@"C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\sounds\AttentionSound.wav");
+            soundPlayer.Play();
+        }
+
+        public void AdditionalQuestion(WrapperType wrapperType)
+        {
+            string text = QuestionTextBy(wrapperType);
+            this.ClearPropmpt();
+            this.Prompt.AppendText(text);
+            this.StartSpeech();
+        }
+
+        private string QuestionTextBy(WrapperType wrapperType)
+        {
+            switch(wrapperType)
+            {
+                case WrapperType.CAR_TYPE:
+                    return "Podaj typ zamawianego samochodu";
+                case WrapperType.ADDERSS:
+                    return "Podaj adres na który ma przyjechać kierowca";
+                case WrapperType.ADDERSS_NUMBER:
+                    return "Podaj numer wskazanego numeru";
+                case WrapperType.HOUR:
+                    return "Podaj godzinę o której kieroca ma przyjechać";
+                case WrapperType.MINUTES:
+                    return "Podaj minute na którą kierowca ma przyjechać";
+                default:
+                    return "Wystąpił bład";
+            }
         }
     }
 }

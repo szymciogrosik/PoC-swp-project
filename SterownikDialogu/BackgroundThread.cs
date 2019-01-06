@@ -23,12 +23,14 @@ namespace SterownikDialogu
             this.MainWindow = mainWindow;
             this.Order = new Order();
             this.ASR = new ASR(this.Order);
+            this.ASR.LoadGrammar();
             this.TTS = new TTS();
         }
 
         public void Core()
         {
             this.TTS.setupPropmptToWelcome();
+           
             // odpalamy rozpoznawanie mowy
             // KOLES mowi
             // zatrzymujemy rozpoznawanie
