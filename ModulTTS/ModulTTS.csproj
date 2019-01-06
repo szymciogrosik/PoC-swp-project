@@ -50,9 +50,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sounds\AttentionSound.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DBConnector\DBConnector.csproj">
       <Project>{69B840BC-B6F7-441D-8C35-1415AABF4A83}</Project>
       <Name>DBConnector</Name>
