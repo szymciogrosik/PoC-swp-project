@@ -1,6 +1,7 @@
 ﻿using DBConnector.Model;
 using ModulASR;
 using ModulTTS;
+using SterownikDialogu.Background.Listener;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ using System.Text;
 using System.Threading;
 using System.Windows.Controls;
 
-namespace SterownikDialogu
+namespace SterownikDialogu 
 {
-    class BackgroundThread
+    class BackgroundThread : RecognizeEventObserver
     {
         private ASR ASR;
         private TTS TTS;
@@ -25,12 +26,14 @@ namespace SterownikDialogu
             this.ASR = new ASR(this.Order);
             this.ASR.LoadGrammar();
             this.TTS = new TTS();
+            this.ASR.AddObserver(this);
         }
 
         public void Core()
         {
             this.TTS.setupPropmptToWelcome();
-           
+
+            this.ASR.StartRecognize();
             // odpalamy rozpoznawanie mowy
             // KOLES mowi
             // zatrzymujemy rozpoznawanie
@@ -48,6 +51,11 @@ namespace SterownikDialogu
                 MainWindow.UpdateElement(GuiElements.LABEL_TEXT, new string[] { i+"" });
                 Thread.Sleep(1000);
             }
+        }
+
+        public void Notify(String message)
+        {
+            Console.WriteLine("dostałem powiadomienie:   " + message);
         }
     }
 }

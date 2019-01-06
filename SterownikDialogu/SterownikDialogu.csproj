@@ -61,8 +61,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BackgroundThread.cs" />
-    <Compile Include="GuiElements.cs" />
+    <Compile Include="Background\BackgroundThread.cs" />
+    <Compile Include="Gui\GuiElements.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

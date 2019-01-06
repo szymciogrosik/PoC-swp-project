@@ -18,3 +18,5 @@ C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.csproj.CoreC
 C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.csproj.CopyComplete
 C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.dll
 C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.pdb
+C:\Users\Szymon\_PROJEKTY\SWP_PROJEKT\ModulASR\obj\Debug\ModulASR.g.resources
+C:\Users\thody\IdeaProjects\swp_projekt\ModulASR\obj\Debug\ModulASR.g.resources
