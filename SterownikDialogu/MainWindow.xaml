@@ -73,36 +73,36 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Style="{DynamicResource styleTitle}">
-                Głosowe zamawianie UBERA!
+                Głosowe zamawianie UBERA na terenie dzielnicy Ursus!
             </Label>
 
 
             <Label  Grid.Column="0" Grid.Row="1" Style="{DynamicResource styleWord}">Typ samochodu:</Label>
-            <Label Name="value_1" Grid.Column="1" Grid.Row="1" Style="{DynamicResource stylePlaceHolder}">{TU WPISAĆ MOŻLIWE ODPOWIEDZI}</Label>
+            <Label Name="value_1" Grid.Column="1" Grid.Row="1" Style="{DynamicResource stylePlaceHolder}">(Rower/Samochód/Helikopter/Skuter/Hulajnogę)</Label>
             <Label Name="holder_1" Grid.Column="3" Grid.Row="1" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
             <Label Grid.Column="0" Grid.Row="2" Style="{DynamicResource styleWord}">Adres:</Label>
-            <Label Name="value_2" Grid.Column="1" Grid.Row="2" Style="{DynamicResource stylePlaceHolder}">{TU WPISAĆ MOŻLIWE ODPOWIEDZI}</Label>
+            <Label Name="value_2" Grid.Column="1" Grid.Row="2" Style="{DynamicResource stylePlaceHolder}">Nazwa ulicy w dzielnicy Ursus</Label>
             <Label Name="holder_2" Grid.Column="3" Grid.Row="2" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
             <Label Grid.Column="0" Grid.Row="3" Style="{DynamicResource styleWord}">Numer</Label>
-            <Label Name="value_3" Grid.Column="1" Grid.Row="3" Style="{DynamicResource stylePlaceHolder}">{TU WPISAĆ MOŻLIWE ODPOWIEDZI}</Label>
+            <Label Name="value_3" Grid.Column="1" Grid.Row="3" Style="{DynamicResource stylePlaceHolder}">(0-23)</Label>
             <Label Name="holder_3" Grid.Column="3" Grid.Row="3" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
             <Label Grid.Column="0" Grid.Row="4" Style="{DynamicResource styleWord}">Godzina:</Label>
-            <Label Name="value_4" Grid.Column="1" Grid.Row="4" Style="{DynamicResource stylePlaceHolder}">{TU WPISAĆ MOŻLIWE ODPOWIEDZI}</Label>
+            <Label Name="value_4" Grid.Column="1" Grid.Row="4" Style="{DynamicResource stylePlaceHolder}">(o godzinie/na godzinę/godzina 0-23)</Label>
             <Label Name="holder_4" Grid.Column="3" Grid.Row="4" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
             <Label Grid.Column="0" Grid.Row="5" Style="{DynamicResource styleWord}">Minuta</Label>
-            <Label Name="value_5" Grid.Column="1" Grid.Row="5" Style="{DynamicResource stylePlaceHolder}">{TU WPISAĆ MOŻLIWE ODPOWIEDZI}</Label>
+            <Label Name="value_5" Grid.Column="1" Grid.Row="5" Style="{DynamicResource stylePlaceHolder}">(o minucie/na minutę/minuta/minut 0-59)</Label>
             <Label Name="holder_5" Grid.Column="3" Grid.Row="5" Style="{DynamicResource styleAnswer}">{ODPOWIEDŹ UŻYTKOWNIKA}</Label>
 
 
-            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" Style="{DynamicResource styleTitle}">Zamówienie złożone!</Label>
+            <Label Name="complete" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" Style="{DynamicResource styleTitle}" Visibility="Hidden">Zamówienie złożone!</Label>
 
         </Grid>
     </Grid>

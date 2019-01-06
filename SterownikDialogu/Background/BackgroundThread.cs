@@ -35,12 +35,9 @@ namespace SterownikDialogu
         {
             this.TTS.setupPropmptToWelcome();
             Boolean isConfirmed = false;
-            Boolean first = true;
 
             while(!isConfirmed)
             {
-                if (!first) this.MakeQuestion();
-                first = false;
                 this.WaitRecognize = true;
                 this.ASR.StartRecognize();
                 while (WaitRecognize)
@@ -49,7 +46,7 @@ namespace SterownikDialogu
                     Thread.Sleep(1000);
                 }
                 Console.WriteLine("Przerwano słuchanie");
-                
+                this.MakeQuestion();
             }
             // koniec podsumowanie zapis do bazy+
         }
