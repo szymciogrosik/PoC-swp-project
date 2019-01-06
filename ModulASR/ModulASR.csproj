@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="grammar.xml" />
+    <Content Include="Grammar\OrderGrammar.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

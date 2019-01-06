@@ -1,0 +1,162 @@
+﻿<grammar version="1.0" xml:lang="pl-PL" mode="voice" root="Order_Grammar"
+         xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics-ms/1.0"
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+
+
+  <rule id="Order_Grammar" scope="public">
+
+    <ruleref uri="#id_carType" />
+    <tag> $.CarType = $$; </tag>
+    
+    <ruleref uri="#id_addressStreet" />
+    <tag> $.AddressStreet = $$; </tag>
+
+    <ruleref uri="#id_addressNumber" />
+    <tag> $.AddressNumber = $$; </tag>
+
+    <ruleref uri="#id_hourPrefix" />
+    <ruleref uri="#id_hour" />
+    <tag> $.Hour = $$; </tag>
+
+    <ruleref uri="#id_minutePrefix" />
+    <ruleref uri="#id_minute" />
+    <tag> $.Minute = $$; </tag>
+
+  </rule>
+
+  <rule id="id_carType" scope="private">
+    <one-of>
+      <item repeat="0-1">Rower</item>
+      <item repeat="0-1">Samochód</item>
+      <item repeat="0-1">Helikopter</item>
+      <item repeat="0-1">Skuter</item>
+      <item repeat="0-1">Hulajnogę</item>
+    </one-of>
+  </rule>
+
+  <rule id="id_addressStreet" scope="private">
+    <one-of>
+      <item repeat="0-1"></item>
+    </one-of>
+  </rule>
+
+  <rule id="id_addressNumber" scope="private">
+    <one-of>
+      <item repeat="0-1"></item>
+    </one-of>
+  </rule>
+  
+  <rule id="id_hourPrefix" scope="private">
+    <one-of>
+      <item>o godzinie</item>
+      <item>na godzine</item>
+      <item>godzina</item>
+    </one-of>
+  </rule>
+
+  <rule id="id_hour" scope="private">
+    <one-of>
+      <item repeat="0-1">0</item>
+      <item repeat="0-1">1</item>
+      <item repeat="0-1">2</item>
+      <item repeat="0-1">3</item>
+      <item repeat="0-1">4</item>
+      <item repeat="0-1">5</item>
+      <item repeat="0-1">6</item>
+      <item repeat="0-1">7</item>
+      <item repeat="0-1">8</item>
+      <item repeat="0-1">9</item>
+      <item repeat="0-1">10</item>
+      <item repeat="0-1">11</item>
+      <item repeat="0-1">12</item>
+      <item repeat="0-1">13</item>
+      <item repeat="0-1">14</item>
+      <item repeat="0-1">15</item>
+      <item repeat="0-1">16</item>
+      <item repeat="0-1">17</item>
+      <item repeat="0-1">18</item>
+      <item repeat="0-1">19</item>
+      <item repeat="0-1">20</item>
+      <item repeat="0-1">21</item>
+      <item repeat="0-1">22</item>
+      <item repeat="0-1">23</item>
+    </one-of>
+  </rule>
+
+  <rule id="id_minutePrefix" scope="private">
+    <one-of>
+      <item repeat="0-1">o minucie</item>
+      <item repeat="0-1">na minutę</item>
+      <item repeat="0-1">minuta</item>
+      <item repeat="0-1">minut</item>
+    </one-of>
+  </rule>
+  
+  <rule id="id_minute" scope="private">
+    <one-of>
+      <item repeat="0-1">0</item>
+      <item repeat="0-1">1</item>
+      <item repeat="0-1">2</item>
+      <item repeat="0-1">3</item>
+      <item repeat="0-1">4</item>
+      <item repeat="0-1">5</item>
+      <item repeat="0-1">6</item>
+      <item repeat="0-1">7</item>
+      <item repeat="0-1">8</item>
+      <item repeat="0-1">9</item>
+      <item repeat="0-1">10</item>
+      <item repeat="0-1">11</item>
+      <item repeat="0-1">12</item>
+      <item repeat="0-1">13</item>
+      <item repeat="0-1">14</item>
+      <item repeat="0-1">15</item>
+      <item repeat="0-1">16</item>
+      <item repeat="0-1">17</item>
+      <item repeat="0-1">18</item>
+      <item repeat="0-1">19</item>
+      <item repeat="0-1">20</item>
+      <item repeat="0-1">21</item>
+      <item repeat="0-1">22</item>
+      <item repeat="0-1">23</item>
+      <item repeat="0-1">24</item>
+      <item repeat="0-1">25</item>
+      <item repeat="0-1">26</item>
+      <item repeat="0-1">27</item>
+      <item repeat="0-1">28</item>
+      <item repeat="0-1">29</item>
+      <item repeat="0-1">30</item>
+      <item repeat="0-1">31</item>
+      <item repeat="0-1">32</item>
+      <item repeat="0-1">33</item>
+      <item repeat="0-1">34</item>
+      <item repeat="0-1">35</item>
+      <item repeat="0-1">36</item>
+      <item repeat="0-1">37</item>
+      <item repeat="0-1">38</item>
+      <item repeat="0-1">39</item>
+      <item repeat="0-1">40</item>
+      <item repeat="0-1">41</item>
+      <item repeat="0-1">42</item>
+      <item repeat="0-1">43</item>
+      <item repeat="0-1">44</item>
+      <item repeat="0-1">45</item>
+      <item repeat="0-1">46</item>
+      <item repeat="0-1">47</item>
+      <item repeat="0-1">48</item>
+      <item repeat="0-1">49</item>
+      <item repeat="0-1">50</item>
+      <item repeat="0-1">51</item>
+      <item repeat="0-1">52</item>
+      <item repeat="0-1">53</item>
+      <item repeat="0-1">54</item>
+      <item repeat="0-1">55</item>
+      <item repeat="0-1">56</item>
+      <item repeat="0-1">57</item>
+      <item repeat="0-1">58</item>
+      <item repeat="0-1">59</item>
+    </one-of>
+  </rule>
+
+
+</grammar>
