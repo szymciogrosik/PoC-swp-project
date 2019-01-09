@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Model\Domain\Order.cs" />
+    <Compile Include="Model\Domain\OrderElements.cs" />
     <Compile Include="Model\Wrapper.cs" />
     <Compile Include="Model\WrapperImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,73 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 
 namespace DBConnector.Model
 {
-    public class CarType : Wrapper<String>
+    public class CarType : Wrapper
     {
-        public CarType() : base(WrapperType.CAR_TYPE, "")
-        {
-        }
-
-        public override bool IsValueSet()
-        {
-            if (Value.Equals("")) return false;
-            else return true;
-        }
+        public CarType() : base(WrapperType.CAR_TYPE) { }
     }
 
-    public class Address : Wrapper<String>
+    public class Address : Wrapper
     {
-        public Address() : base(WrapperType.ADDRESS, "")
-        {
-        }
-
-        public override bool IsValueSet()
-        {
-            if (Value.Equals("")) return false;
-            else return true;
-        }
+        public Address() : base(WrapperType.ADDRESS) { }
     }
 
-    public class AddressNumber : Wrapper<int>
+    public class AddressNumber : Wrapper
     {
-        public AddressNumber() : base(WrapperType.ADDERSS_NUMBER, -1)
-        {
-        }
-
-        public override bool IsValueSet()
-        {
-            if (Value.Equals(-1)) return false;
-            else return true;
-        }
+        public AddressNumber() : base(WrapperType.ADDERSS_NUMBER) { }
     }
 
-    public class Hour : Wrapper<int>
+    public class Hour : Wrapper
     {
-        public Hour() : base(WrapperType.HOUR, -1)
-        {
-        }
-
-        public override bool IsValueSet()
-        {
-            if (Value.Equals(-1)) return false;
-            else return true;
-        }
+        public Hour() : base(WrapperType.HOUR) { }
     }
 
-    public class Minute : Wrapper<int>
+    public class Minute : Wrapper
     {
-        public Minute() : base(WrapperType.MINUTES, -1)
-        {
-        }
-
-        public override bool IsValueSet()
-        {
-            if (Value.Equals(-1)) return false;
-            else return true;
-        }
+        public Minute() : base(WrapperType.MINUTES) { }
     }
 }

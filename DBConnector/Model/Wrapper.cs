@@ -1,27 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DBConnector.Model
 {
-    public abstract class Wrapper<T>
+    public abstract class Wrapper
     {
         public WrapperType Type { get; }
-        public T Value { get; set; }
+        public String Value { get; set; }
 
-        public Wrapper(WrapperType type, T Value)
+        private String InitialValue = "";
+
+        public Wrapper(WrapperType type)
         {
-            this.Type = Type;
-            this.Value = Value;
+            this.Type = type;
+            this.Value = InitialValue;
         }
-
-        public abstract Boolean IsValueSet();
+        
+        public Boolean IsValueSet()
+        {
+            if (Value.Equals(InitialValue)) return false;
+            else return true;
+        }
     }
 
     public enum WrapperType : int
     {
-        // TODO uzupełnić o pozostałe typy
         CAR_TYPE = 1,
         ADDRESS = 2,
         ADDERSS_NUMBER = 3,
