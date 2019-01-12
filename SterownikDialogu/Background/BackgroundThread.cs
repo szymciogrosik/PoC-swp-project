@@ -1,5 +1,6 @@
 ﻿using DBConnector.Model;
 using DBConnector.Model.Domain;
+using DBConnector.Service;
 using ModulASR;
 using ModulTTS;
 using SterownikDialogu.Background.Listener;
@@ -16,6 +17,7 @@ namespace SterownikDialogu
     {
         private readonly ASR ASR;
         private readonly TTS TTS;
+        private readonly OrderService OrderService;
         private OrderElements OrderElements;
 
         private MainWindow MainWindow;
@@ -26,6 +28,7 @@ namespace SterownikDialogu
         {
             this.MainWindow = mainWindow;
             this.OrderElements = new OrderElements();
+            this.OrderService = new OrderService();
             this.ASR = new ASR();
             this.ASR.LoadGrammar();
             this.TTS = new TTS();
@@ -50,8 +53,8 @@ namespace SterownikDialogu
                 this.MakeQuestion();
             }
             MainWindow.UpdateElement(GuiElements.LABEL_FINISH, new string[] { "any" });
+            this.OrderService.SaveOrder(Order.Create(this.OrderElements));
             this.TTS.SetupPropmptToGoodbye();
-            // koniec podsumowanie zapis do bazy+
         }
 
         public void Notify(Dictionary<WrapperType, string> dictionary)

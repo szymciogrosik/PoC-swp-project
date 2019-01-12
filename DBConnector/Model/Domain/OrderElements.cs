@@ -25,5 +25,10 @@ namespace DBConnector.Model.Domain
             if (isNotSet) return false;
             return true;
         }
+
+        public Wrapper Find(WrapperType wrapperType)
+        { 
+            return this.elements.Find(ele => ele.Type == wrapperType);
+        }
     }
 }
