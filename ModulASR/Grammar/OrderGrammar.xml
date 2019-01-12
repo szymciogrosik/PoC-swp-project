@@ -1,162 +1,327 @@
-﻿<grammar version="1.0" xml:lang="pl-PL" mode="voice" root="Order_Grammar"
-         xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics-ms/1.0"
-         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+﻿  <grammar version="1.0" xml:lang="pl-PL" mode="voice" root="Order_Grammar"
+          xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics-ms/1.0"
+          xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
 
 
 
-  <rule id="Order_Grammar" scope="public">
+    <rule id="Order_Grammar" scope="public">
 
-    <ruleref uri="#id_carType" />
-    <tag> $.CarType = $$; </tag>
-    
-    <ruleref uri="#id_addressStreet" />
-    <tag> $.AddressStreet = $$; </tag>
+      <ruleref uri="#id_carType" />
+      <tag> $.CAR_TYPE = $$; </tag>
 
-    <ruleref uri="#id_addressNumber" />
-    <tag> $.AddressNumber = $$; </tag>
+      <ruleref uri="#id_addressStreet" />
+      <tag> $.ADDRESS = $$; </tag>
 
-    <ruleref uri="#id_hourPrefix" />
-    <ruleref uri="#id_hour" />
-    <tag> $.Hour = $$; </tag>
+      <ruleref uri="#id_address_numberPrefix" />
+      <ruleref uri="#id_address_number" />
+      <tag> $.ADDERSS_NUMBER = $$; </tag>
 
-    <ruleref uri="#id_minutePrefix" />
-    <ruleref uri="#id_minute" />
-    <tag> $.Minute = $$; </tag>
+      <ruleref uri="#id_hourPrefix" />
+      <ruleref uri="#id_hour" />
+      <tag> $.HOUR = $$; </tag>
 
-  </rule>
+      <ruleref uri="#id_minutePrefix" />
+      <ruleref uri="#id_minute" />
+      <tag> $.MINUTES = $$; </tag>
 
-  <rule id="id_carType" scope="private">
-    <one-of>
-      <item repeat="0-1">Rower</item>
-      <item repeat="0-1">Samochód</item>
-      <item repeat="0-1">Helikopter</item>
-      <item repeat="0-1">Skuter</item>
-      <item repeat="0-1">Hulajnogę</item>
-    </one-of>
-  </rule>
+    </rule>
 
-  <rule id="id_addressStreet" scope="private">
-    <one-of>
-      <item repeat="0-1"></item>
-    </one-of>
-  </rule>
+    <rule id="id_carType" scope="private">
+      <one-of>
+        <item repeat="0-1">Rower</item>
+        <item repeat="0-1">Samochód</item>
+        <item repeat="0-1">Helikopter</item>
+        <item repeat="0-1">Skuter</item>
+        <item repeat="0-1">Hulajnogę</item>
+      </one-of>
+    </rule>
 
-  <rule id="id_addressNumber" scope="private">
-    <one-of>
-      <item repeat="0-1"></item>
-    </one-of>
-  </rule>
-  
-  <rule id="id_hourPrefix" scope="private">
-    <one-of>
-      <item>o godzinie</item>
-      <item>na godzine</item>
-      <item>godzina</item>
-    </one-of>
-  </rule>
+    <rule id="id_addressStreet" scope="private">
+      <one-of>
+        <item repeat="0-1">Franciszka Adolfa Achera</item>
+        <item repeat="0-1">Karola Adamieckiego</item>
+        <item repeat="0-1">Aktorska</item>
+        <item repeat="0-1">Apartamentowa</item>
+        <item repeat="0-1">Balbinki</item>
+        <item repeat="0-1">Balicka</item>
+        <item repeat="0-1">Władysława Bandurskiego</item>
+        <item repeat="0-1">Baranowska</item>
+        <item repeat="0-1">Władysława Bełzy</item>
+        <item repeat="0-1">Władysława Bieńczaka</item>
+        <item repeat="0-1">Biernata z Lublina</item>
+        <item repeat="0-1">Bohaterów Warszawy</item>
+        <item repeat="0-1">Bolesława Krzywoustego</item>
+        <item repeat="0-1">Bolesława Śmiałego</item>
+        <item repeat="0-1">Braterstwa Broni</item>
+        <item repeat="0-1">Jana Brzechwy</item>
+        <item repeat="0-1">Józefa Chełmońskiego</item>
+        <item repeat="0-1">Cierlicka</item>
+        <item repeat="0-1">Józefa Czechowicza</item>
+        <item repeat="0-1">Czerwona Droga</item>
+        <item repeat="0-1">płk. Stanisława Dąbka</item>
+        <item repeat="0-1">Michała Drzymały</item>
+        <item repeat="0-1">Dzieci Warszawy</item>
+        <item repeat="0-1">Falentyńska</item>
+        <item repeat="0-1">Mariana Falskiego</item>
+        <item repeat="0-1">Faraona</item>
+        <item repeat="0-1">Górna Droga</item>
+        <item repeat="0-1">Władysława Jana Grabskiego</item>
+        <item repeat="0-1">Grocholicka</item>
+        <item repeat="0-1">Władysława Hassa</item>
+        <item repeat="0-1">Tadeusza Hennela</item>
+        <item repeat="0-1">Henryka I Brodatego</item>
+        <item repeat="0-1">Henryka II Pobożnego</item>
+        <item repeat="0-1">Henryka IV Probusa</item>
+        <item repeat="0-1">Jacka i Agatki</item>
+        <item repeat="0-1">Jesienna</item>
+        <item repeat="0-1">Kaczorowska</item>
+        <item repeat="0-1">Kajetańska</item>
+        <item repeat="0-1">Kazimierza Jagiellończyka</item>
+        <item repeat="0-1">Kazimierza Odnowiciela</item>
+        <item repeat="0-1">Kazimierza Sprawiedliwego</item>
+        <item repeat="0-1">Mariana Keniga</item>
+        <item repeat="0-1">Kolorowa</item>
+        <item repeat="0-1">Kompanii AK „Kordian”</item>
+        <item repeat="0-1">Komunardów</item>
+        <item repeat="0-1">Konińska</item>
+        <item repeat="0-1">Konotopska</item>
+        <item repeat="0-1">Koronacyjna</item>
+        <item repeat="0-1">Tadeusza Kościuszki</item>
+        <item repeat="0-1">Mariana Krawczyka</item>
+        <item repeat="0-1">Królowej Bony</item>
+        <item repeat="0-1">Królów Polskich</item>
+        <item repeat="0-1">Kuźnicy Kołłątajowskiej</item>
+        <item repeat="0-1">Lalki</item>
+        <item repeat="0-1">Stanisława Leszczyńskiego</item>
+        <item repeat="0-1">Leszka Białego</item>
+        <item repeat="0-1">Leszka Czarnego</item>
+        <item repeat="0-1">Lipiec Reymontowskich</item>
+        <item repeat="0-1">Ppłk. Wacława Lipińskiego</item>
+        <item repeat="0-1">Listopadowa</item>
+        <item repeat="0-1">Magnacka</item>
+        <item repeat="0-1">1 Maja</item>
+        <item repeat="0-1">Malinowa</item>
+        <item repeat="0-1">Zygmunta Markerta</item>
+        <item repeat="0-1">Henryka Melcera-Szczawińskiego</item>
+        <item repeat="0-1">Jerzego Michałowicza</item>
+        <item repeat="0-1">Mieszka Starego</item>
+        <item repeat="0-1">Noworegulska</item>
+        <item repeat="0-1">Nowotyska</item>
+        <item repeat="0-1">Nurzyńska</item>
+        <item repeat="0-1">Obrońców Helu</item>
+        <item repeat="0-1">Ochocka</item>
+        <item repeat="0-1">Henryka Opieńskiego</item>
+        <item repeat="0-1">Orderu Uśmiechu</item>
+        <item repeat="0-1">Orląt Lwowskich</item>
+        <item repeat="0-1">Orłów Piastowskich</item>
+        <item repeat="0-1">Piastowska</item>
+        <item repeat="0-1">Piechoty Wybranieckiej</item>
+        <item repeat="0-1">Piskorska</item>
+        <item repeat="0-1">Plutonu AK „Torpedy”</item>
+        <item repeat="0-1">Poczty Gdańskiej</item>
+        <item repeat="0-1">Posag 7 Panien</item>
+        <item repeat="0-1">Prawnicza</item>
+        <item repeat="0-1">Prażmowska</item>
+        <item repeat="0-1">Aleksandra Prystora</item>
+        <item repeat="0-1">Przejazdowa</item>
+        <item repeat="0-1">Przemysława II</item>
+        <item repeat="0-1">Przy Forcie</item>
+        <item repeat="0-1">Kazimierza Pużaka</item>
+        <item repeat="0-1">Barbary Radziwiłłówny</item>
+        <item repeat="0-1">Rakietników</item>
+        <item repeat="0-1">Elżbiety Rakuszanki</item>
+        <item repeat="0-1">Rawska</item>
+        <item repeat="0-1">Regulska</item>
+        <item repeat="0-1">Robinii</item>
+        <item repeat="0-1">Henryka Rodakowskiego</item>
+        <item repeat="0-1">Rumiankowa</item>
+        <item repeat="0-1">Rydzyńska</item>
+        <item repeat="0-1">Rynkowa</item>
+        <item repeat="0-1">Siłaczki</item>
+        <item repeat="0-1">gen. Felicjana Sławoja Składkowskiego</item>
+        <item repeat="0-1">Skoroszewska</item>
+        <item repeat="0-1">Walerego Sławka</item>
+        <item repeat="0-1">Słupska</item>
+        <item repeat="0-1">gen. Kazimierza Sosnkowskiego</item>
+        <item repeat="0-1">Michała Spisaka</item>
+        <item repeat="0-1">Starodęby</item>
+        <item repeat="0-1">Suchy Las</item>
+        <item repeat="0-1">Szamoty</item>
+        <item repeat="0-1">Jana Marcina Szancera</item>
+        <item repeat="0-1">Andrzeja Szomańskiego</item>
+        <item repeat="0-1">Śmigielska</item>
+        <item repeat="0-1">Świętej Rodziny</item>
+        <item repeat="0-1">Tomcia Palucha</item>
+        <item repeat="0-1">Traktorzystów</item>
+        <item repeat="0-1">Bernarda Wapowskiego</item>
+        <item repeat="0-1">Warszawska</item>
+        <item repeat="0-1">Wincentego Kadłubka</item>
+        <item repeat="0-1">Wiosny Ludów</item>
+        <item repeat="0-1">Władysława Hermana</item>
+        <item repeat="0-1">Władysława Jagiełły</item>
+        <item repeat="0-1">Władysława Laskonogiego</item>
+        <item repeat="0-1">Jerzego i Władysławy Włoczewskich</item>
+        <item repeat="0-1">Stanisława Wojciechowskiego</item>
+        <item repeat="0-1">Wolności</item>
+        <item repeat="0-1">Wysoczyńska</item>
+        <item repeat="0-1">Zaczarowanej Dorożki</item>
+        <item repeat="0-1">Zagłoby</item>
+        <item repeat="0-1">Zakątek</item>
+        <item repeat="0-1">Zielonej Gęsi</item>
+        <item repeat="0-1">Zielonogórska</item>
+        <item repeat="0-1">Zygmunta Augusta</item>
+        <item repeat="0-1">Żołnierzy II Armii Wojska Polskiego</item>
+        <item repeat="0-1">Żurawicka</item>
+        <item repeat="0-1">Żywiecka</item>
+      </one-of>
+    </rule>
 
-  <rule id="id_hour" scope="private">
-    <one-of>
-      <item repeat="0-1">0</item>
-      <item repeat="0-1">1</item>
-      <item repeat="0-1">2</item>
-      <item repeat="0-1">3</item>
-      <item repeat="0-1">4</item>
-      <item repeat="0-1">5</item>
-      <item repeat="0-1">6</item>
-      <item repeat="0-1">7</item>
-      <item repeat="0-1">8</item>
-      <item repeat="0-1">9</item>
-      <item repeat="0-1">10</item>
-      <item repeat="0-1">11</item>
-      <item repeat="0-1">12</item>
-      <item repeat="0-1">13</item>
-      <item repeat="0-1">14</item>
-      <item repeat="0-1">15</item>
-      <item repeat="0-1">16</item>
-      <item repeat="0-1">17</item>
-      <item repeat="0-1">18</item>
-      <item repeat="0-1">19</item>
-      <item repeat="0-1">20</item>
-      <item repeat="0-1">21</item>
-      <item repeat="0-1">22</item>
-      <item repeat="0-1">23</item>
-    </one-of>
-  </rule>
+    <rule id="id_address_numberPrefix" scope="private">
+      <one-of>
+        <item repeat="0-1">numer</item>
+        <item repeat="0-1">o numerze</item>
+      </one-of>
+    </rule>
 
-  <rule id="id_minutePrefix" scope="private">
-    <one-of>
-      <item repeat="0-1">o minucie</item>
-      <item repeat="0-1">na minutę</item>
-      <item repeat="0-1">minuta</item>
-      <item repeat="0-1">minut</item>
-    </one-of>
-  </rule>
-  
-  <rule id="id_minute" scope="private">
-    <one-of>
-      <item repeat="0-1">0</item>
-      <item repeat="0-1">1</item>
-      <item repeat="0-1">2</item>
-      <item repeat="0-1">3</item>
-      <item repeat="0-1">4</item>
-      <item repeat="0-1">5</item>
-      <item repeat="0-1">6</item>
-      <item repeat="0-1">7</item>
-      <item repeat="0-1">8</item>
-      <item repeat="0-1">9</item>
-      <item repeat="0-1">10</item>
-      <item repeat="0-1">11</item>
-      <item repeat="0-1">12</item>
-      <item repeat="0-1">13</item>
-      <item repeat="0-1">14</item>
-      <item repeat="0-1">15</item>
-      <item repeat="0-1">16</item>
-      <item repeat="0-1">17</item>
-      <item repeat="0-1">18</item>
-      <item repeat="0-1">19</item>
-      <item repeat="0-1">20</item>
-      <item repeat="0-1">21</item>
-      <item repeat="0-1">22</item>
-      <item repeat="0-1">23</item>
-      <item repeat="0-1">24</item>
-      <item repeat="0-1">25</item>
-      <item repeat="0-1">26</item>
-      <item repeat="0-1">27</item>
-      <item repeat="0-1">28</item>
-      <item repeat="0-1">29</item>
-      <item repeat="0-1">30</item>
-      <item repeat="0-1">31</item>
-      <item repeat="0-1">32</item>
-      <item repeat="0-1">33</item>
-      <item repeat="0-1">34</item>
-      <item repeat="0-1">35</item>
-      <item repeat="0-1">36</item>
-      <item repeat="0-1">37</item>
-      <item repeat="0-1">38</item>
-      <item repeat="0-1">39</item>
-      <item repeat="0-1">40</item>
-      <item repeat="0-1">41</item>
-      <item repeat="0-1">42</item>
-      <item repeat="0-1">43</item>
-      <item repeat="0-1">44</item>
-      <item repeat="0-1">45</item>
-      <item repeat="0-1">46</item>
-      <item repeat="0-1">47</item>
-      <item repeat="0-1">48</item>
-      <item repeat="0-1">49</item>
-      <item repeat="0-1">50</item>
-      <item repeat="0-1">51</item>
-      <item repeat="0-1">52</item>
-      <item repeat="0-1">53</item>
-      <item repeat="0-1">54</item>
-      <item repeat="0-1">55</item>
-      <item repeat="0-1">56</item>
-      <item repeat="0-1">57</item>
-      <item repeat="0-1">58</item>
-      <item repeat="0-1">59</item>
-    </one-of>
-  </rule>
+    <rule id="id_address_number" scope="private">
+      <one-of>
+        <item repeat="0-1">0</item>
+        <item repeat="0-1">1</item>
+        <item repeat="0-1">2</item>
+        <item repeat="0-1">3</item>
+        <item repeat="0-1">4</item>
+        <item repeat="0-1">5</item>
+        <item repeat="0-1">6</item>
+        <item repeat="0-1">7</item>
+        <item repeat="0-1">8</item>
+        <item repeat="0-1">9</item>
+        <item repeat="0-1">10</item>
+        <item repeat="0-1">11</item>
+        <item repeat="0-1">12</item>
+        <item repeat="0-1">13</item>
+        <item repeat="0-1">14</item>
+        <item repeat="0-1">15</item>
+        <item repeat="0-1">16</item>
+        <item repeat="0-1">17</item>
+        <item repeat="0-1">18</item>
+        <item repeat="0-1">19</item>
+        <item repeat="0-1">20</item>
+        <item repeat="0-1">21</item>
+        <item repeat="0-1">22</item>
+        <item repeat="0-1">23</item>
+      </one-of>
+    </rule>
+
+    <rule id="id_hourPrefix" scope="private">
+      <one-of>
+        <item repeat="0-1">o godzinie</item>
+        <item repeat="0-1">na godzine</item>
+        <item repeat="0-1">godzina</item>
+      </one-of>
+    </rule>
+
+    <rule id="id_hour" scope="private">
+      <one-of>
+        <item repeat="0-1">0</item>
+        <item repeat="0-1">1</item>
+        <item repeat="0-1">2</item>
+        <item repeat="0-1">3</item>
+        <item repeat="0-1">4</item>
+        <item repeat="0-1">5</item>
+        <item repeat="0-1">6</item>
+        <item repeat="0-1">7</item>
+        <item repeat="0-1">8</item>
+        <item repeat="0-1">9</item>
+        <item repeat="0-1">10</item>
+        <item repeat="0-1">11</item>
+        <item repeat="0-1">12</item>
+        <item repeat="0-1">13</item>
+        <item repeat="0-1">14</item>
+        <item repeat="0-1">15</item>
+        <item repeat="0-1">16</item>
+        <item repeat="0-1">17</item>
+        <item repeat="0-1">18</item>
+        <item repeat="0-1">19</item>
+        <item repeat="0-1">20</item>
+        <item repeat="0-1">21</item>
+        <item repeat="0-1">22</item>
+        <item repeat="0-1">23</item>
+      </one-of>
+    </rule>
+
+    <rule id="id_minutePrefix" scope="private">
+      <one-of>
+        <item repeat="0-1">o minucie</item>
+        <item repeat="0-1">na minutę</item>
+        <item repeat="0-1">minuta</item>
+        <item repeat="0-1">minut</item>
+      </one-of>
+    </rule>
+
+    <rule id="id_minute" scope="private">
+      <one-of>
+        <item repeat="0-1">0</item>
+        <item repeat="0-1">1</item>
+        <item repeat="0-1">2</item>
+        <item repeat="0-1">3</item>
+        <item repeat="0-1">4</item>
+        <item repeat="0-1">5</item>
+        <item repeat="0-1">6</item>
+        <item repeat="0-1">7</item>
+        <item repeat="0-1">8</item>
+        <item repeat="0-1">9</item>
+        <item repeat="0-1">10</item>
+        <item repeat="0-1">11</item>
+        <item repeat="0-1">12</item>
+        <item repeat="0-1">13</item>
+        <item repeat="0-1">14</item>
+        <item repeat="0-1">15</item>
+        <item repeat="0-1">16</item>
+        <item repeat="0-1">17</item>
+        <item repeat="0-1">18</item>
+        <item repeat="0-1">19</item>
+        <item repeat="0-1">20</item>
+        <item repeat="0-1">21</item>
+        <item repeat="0-1">22</item>
+        <item repeat="0-1">23</item>
+        <item repeat="0-1">24</item>
+        <item repeat="0-1">25</item>
+        <item repeat="0-1">26</item>
+        <item repeat="0-1">27</item>
+        <item repeat="0-1">28</item>
+        <item repeat="0-1">29</item>
+        <item repeat="0-1">30</item>
+        <item repeat="0-1">31</item>
+        <item repeat="0-1">32</item>
+        <item repeat="0-1">33</item>
+        <item repeat="0-1">34</item>
+        <item repeat="0-1">35</item>
+        <item repeat="0-1">36</item>
+        <item repeat="0-1">37</item>
+        <item repeat="0-1">38</item>
+        <item repeat="0-1">39</item>
+        <item repeat="0-1">40</item>
+        <item repeat="0-1">41</item>
+        <item repeat="0-1">42</item>
+        <item repeat="0-1">43</item>
+        <item repeat="0-1">44</item>
+        <item repeat="0-1">45</item>
+        <item repeat="0-1">46</item>
+        <item repeat="0-1">47</item>
+        <item repeat="0-1">48</item>
+        <item repeat="0-1">49</item>
+        <item repeat="0-1">50</item>
+        <item repeat="0-1">51</item>
+        <item repeat="0-1">52</item>
+        <item repeat="0-1">53</item>
+        <item repeat="0-1">54</item>
+        <item repeat="0-1">55</item>
+        <item repeat="0-1">56</item>
+        <item repeat="0-1">57</item>
+        <item repeat="0-1">58</item>
+        <item repeat="0-1">59</item>
+      </one-of>
+    </rule>
 
 
-</grammar>
+  </grammar>

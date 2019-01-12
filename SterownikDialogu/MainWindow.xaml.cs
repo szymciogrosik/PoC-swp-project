@@ -42,17 +42,70 @@ namespace SterownikDialogu
 
         public void UpdateElement(GuiElements eleName, string[] customParams)
         {
-            if (eleName.Equals(GuiElements.LABEL_TEXT))
+            DelegateParams delegateParams = null;
+            switch (eleName)
             {
-                DelegateParams delegateParams = new DelegateParams(UpdateTestLabel);
-                this.Dispatcher.Invoke(delegateParams, customParams);
+                case GuiElements.LABEL_CAR_TYPE:
+                    delegateParams = new DelegateParams(UpdateCarType);
+                    break;
+                case GuiElements.LABEL_ADDRESS:
+                    delegateParams = new DelegateParams(UpdateAddress);
+                    break;
+                case GuiElements.LABEL_ADDRESS_NUMBER:
+                    delegateParams = new DelegateParams(UpdateAddressNumber);
+                    break;
+                case GuiElements.LABEL_HOUR:
+                    delegateParams = new DelegateParams(UpdateHour);
+                    break;
+                case GuiElements.LABEL_MINUTE:
+                    delegateParams = new DelegateParams(UpdateMinute);
+                    break;
+                case GuiElements.LABEL_LISTENING:
+                    delegateParams = new DelegateParams(UpdateListeningIcon);
+                    break;
+                case GuiElements.LABEL_FINISH:
+                    delegateParams = new DelegateParams(UpdateFinishLabel);
+                    break;
             }
+            this.Dispatcher.Invoke(delegateParams, customParams);
         }
 
-        private void UpdateTestLabel(Object i)
+        private void UpdateCarType(object obj)
         {
-            int val = Convert.ToInt32(i);
-            //labelExample.Content = i + "";
+            holder_1.Content = (string)obj;
+        }
+
+        private void UpdateAddress(object obj)
+        {
+            holder_2.Content = (string)obj;
+        }
+
+        private void UpdateAddressNumber(object obj)
+        {
+            holder_3.Content = (string)obj;
+        }
+
+        private void UpdateHour(object obj)
+        {
+            holder_4.Content = (string)obj;
+        }
+
+        private void UpdateMinute(object obj)
+        {
+            holder_5.Content = (string)obj;
+        }
+
+        private void UpdateListeningIcon(object obj)
+        {
+            bool value = bool.Parse((string)obj);
+            if (value) listening_icon.Visibility = Visibility.Visible;
+            else listening_icon.Visibility = Visibility.Hidden;
+        }
+        
+
+        private void UpdateFinishLabel(object obj)
+        {
+             finish.Visibility = Visibility.Visible;
         }
 
     }

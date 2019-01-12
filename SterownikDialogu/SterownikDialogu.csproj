@@ -61,8 +61,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BackgroundThread.cs" />
-    <Compile Include="GuiElements.cs" />
+    <Compile Include="Background\BackgroundThread.cs" />
+    <Compile Include="Gui\GuiElements.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,6 +104,9 @@
       <Project>{f92c9694-852b-46c9-9294-d1fb88b19301}</Project>
       <Name>ModulTTS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\listening.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

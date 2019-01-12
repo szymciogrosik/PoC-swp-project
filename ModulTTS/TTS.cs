@@ -25,19 +25,20 @@ namespace ModulTTS
             this.Synthesizer.Speak(this.Prompt);
         }
 
-        public void setupPropmptToWelcome()
+        public void SetupPropmptToWelcome()
         {
-            string text = "Witamy w głosowym zamawianiu UBERA. Proszę rozpocząć po sygnale.";
+            string text = "Witamy w głosowym zamawianiu UBERA. Proszę rozpocząć po pojawieniu się ikony na dole ekranu!";
             this.ClearPropmpt();
             this.Prompt.AppendText(text);
             this.StartSpeech();
-            this.AttentionSound();
         }
 
-        private void AttentionSound()
+        public void SetupPropmptToGoodbye()
         {
-            System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(@"C:\Users\thody\IdeaProjects\swp_projekt\ModulTTS\sounds\AttentionSound.wav");
-            soundPlayer.Play();
+            string text = "Zamówienie zostało przyjęte, dziękujemy za skorzystanie z naszych usług! Do usłyszenia!";
+            this.ClearPropmpt();
+            this.Prompt.AppendText(text);
+            this.StartSpeech();
         }
 
         public void AdditionalQuestion(WrapperType wrapperType)
@@ -54,12 +55,12 @@ namespace ModulTTS
             {
                 case WrapperType.CAR_TYPE:
                     return "Podaj typ zamawianego samochodu";
-                case WrapperType.ADDERSS:
-                    return "Podaj adres na który ma przyjechać kierowca";
+                case WrapperType.ADDRESS:
+                    return "Podaj ulicę, na którą ma przyjechać kierowca";
                 case WrapperType.ADDERSS_NUMBER:
-                    return "Podaj numer wskazanego numeru";
+                    return "Podaj numer budynku";
                 case WrapperType.HOUR:
-                    return "Podaj godzinę o której kieroca ma przyjechać";
+                    return "Podaj godzinę o której kierowca ma przyjechać";
                 case WrapperType.MINUTES:
                     return "Podaj minute na którą kierowca ma przyjechać";
                 default:
